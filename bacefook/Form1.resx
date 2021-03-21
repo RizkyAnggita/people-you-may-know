@@ -1,0 +1,286 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <data name="clickMeButton.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI Black, 16pt, style=Bold</value>
+  </data>
+  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="clickMeButton.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>761, 407</value>
+  </data>
+  <data name="clickMeButton.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>223, 99</value>
+  </data>
+  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+  <data name="clickMeButton.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>0</value>
+  </data>
+  <data name="clickMeButton.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="&gt;&gt;clickMeButton.Name" xml:space="preserve">
+    <value>clickMeButton</value>
+  </data>
+  <data name="&gt;&gt;clickMeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clickMeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;clickMeButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelTitle.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="labelTitle.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>441, 34</value>
+  </data>
+  <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>373, 45</value>
+  </data>
+  <data name="labelTitle.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>5</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>People You May Know</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Name" xml:space="preserve">
+    <value>labelTitle</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelGraphInput.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="labelGraphInput.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 16pt</value>
+  </data>
+  <data name="labelGraphInput.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>140, 108</value>
+  </data>
+  <data name="labelGraphInput.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>305, 38</value>
+  </data>
+  <data name="labelGraphInput.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>6</value>
+  </data>
+  <data name="labelGraphInput.Text" xml:space="preserve">
+    <value>Graph File         : </value>
+  </data>
+  <data name="&gt;&gt;labelGraphInput.Name" xml:space="preserve">
+    <value>labelGraphInput</value>
+  </data>
+  <data name="&gt;&gt;labelGraphInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelGraphInput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelGraphInput.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnUploadFile.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 14pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnUploadFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUploadFile.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>441, 108</value>
+  </data>
+  <data name="btnUploadFile.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>150, 48</value>
+  </data>
+  <data name="btnUploadFile.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>7</value>
+  </data>
+  <data name="btnUploadFile.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.Name" xml:space="preserve">
+    <value>btnUploadFile</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="richTxtBoxFilename.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>629, 108</value>
+  </data>
+  <data name="richTxtBoxFilename.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>185, 48</value>
+  </data>
+  <data name="richTxtBoxFilename.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>9</value>
+  </data>
+  <data name="richTxtBoxFilename.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTxtBoxFilename.Name" xml:space="preserve">
+    <value>richTxtBoxFilename</value>
+  </data>
+  <data name="&gt;&gt;richTxtBoxFilename.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTxtBoxFilename.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTxtBoxFilename.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTxtBoxGraph.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 14pt</value>
+  </data>
+  <data name="richTxtBoxGraph.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>56, 281</value>
+  </data>
+  <data name="richTxtBoxGraph.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>404, 324</value>
+  </data>
+  <data name="richTxtBoxGraph.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="richTxtBoxGraph.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTxtBoxGraph.Name" xml:space="preserve">
+    <value>richTxtBoxGraph</value>
+  </data>
+  <data name="&gt;&gt;richTxtBoxGraph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTxtBoxGraph.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTxtBoxGraph.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelGraph.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="labelGraph.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 16pt</value>
+  </data>
+  <data name="labelGraph.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>56, 237</value>
+  </data>
+  <data name="labelGraph.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>140, 38</value>
+  </data>
+  <data name="labelGraph.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>10</value>
+  </data>
+  <data name="labelGraph.Text" xml:space="preserve">
+    <value>Graph: </value>
+  </data>
+  <data name="&gt;&gt;labelGraph.Name" xml:space="preserve">
+    <value>labelGraph</value>
+  </data>
+  <data name="&gt;&gt;labelGraph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelGraph.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelGraph.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing.Primitives">
+    <value>20, 45</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>1219, 664</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI Black, 16pt, style=Bold</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
