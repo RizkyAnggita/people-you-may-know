@@ -49,16 +49,22 @@ namespace bacefook
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            string filename = openFileDialog1.FileName;
-            string readfile = File.ReadAllText(filename);
-            richTxtBoxFilename.Text = filename;
-            richTxtBoxGraph.Text = readfile;
+            
+            openFileDialog1.Filter = "Plain text (*.txt) | *.txt";
+            openFileDialog1.FilterIndex = 1;
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string filename = openFileDialog1.FileName;
+                string readfile = File.ReadAllText(filename);
+                richTxtBoxFilename.Text = filename;
+                richTxtBoxGraph.Text = readfile;
 
-            Graph g1 = new Graph();
-            TxtToGraph(filename, g1);
-            string b = g1.PrintGraph();
-            richTxtBoxGraph.Text = b;
+                Graph g1 = new Graph();
+                TxtToGraph(filename, g1);
+                string b = g1.PrintGraph();
+                richTxtBoxGraph.Text = b;
+                g1.visualizedGraph();
+            }    
         }
         static void TxtToGraph(string filepath, Graph g)
         {
