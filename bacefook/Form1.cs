@@ -85,5 +85,66 @@ namespace bacefook
             }
             sr.Close();
         }
+
+        static void ExploreFriends(string friendA, string friendB, Graph g, string algorithm)
+        {
+            Console.WriteLine("\nNama akun: " + friendA + " dan " + friendB);
+            if (algorithm == "BFS")
+            {
+                Console.WriteLine("Explore Friend with BFS");
+                Dictionary<string, int> distance = new Dictionary<string, int>();
+                Dictionary<string, string> predPath = new Dictionary<string, string>();
+
+                //Tidak ketemu friendB
+                if (!g.BFS2(friendA, friendB, ref distance, ref predPath))
+                {
+                    Console.WriteLine("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.");
+                    return;
+                }
+
+                //Ketemu friendB
+
+                List<string> path = new List<string>();
+                string before = friendB;
+                path.Add(before);
+
+                //Me
+                while (predPath[before] != null)
+                {
+                    path.Add(predPath[before]);
+                    before = predPath[before];
+                }
+                Console.WriteLine();
+                Console.WriteLine(distance[friendB] - 1 + "th-degree connection");
+                for (int i = path.Count - 1; i >= 0; i--)
+                {
+                    Console.Write(path[i]);
+                    if (i != 0)
+                    {
+                        Console.Write("->");
+                    }
+                }
+                Console.WriteLine();
+
+            }
+            else if (algorithm == "DFS")
+            {
+                Console.WriteLine("\nExplore Friend with DFS");
+                g.DFSIterative(friendA, friendB);
+                Console.WriteLine();
+
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+
+
+        }
+
+        private void radioButton_DFS_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

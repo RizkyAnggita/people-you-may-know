@@ -37,7 +37,14 @@ namespace bacefook
             this.btnUploadFile = new System.Windows.Forms.Button();
             this.richTxtBoxFilename = new System.Windows.Forms.RichTextBox();
             this.richTxtBoxGraph = new System.Windows.Forms.RichTextBox();
-            this.labelGraph = new System.Windows.Forms.Label();
+            this.labelGraphVisual = new System.Windows.Forms.Label();
+            this.labelChooseAccount = new System.Windows.Forms.Label();
+            this.labelChooseAlgorithm = new System.Windows.Forms.Label();
+            this.radioButton_DFS = new System.Windows.Forms.RadioButton();
+            this.radioButton_BFS = new System.Windows.Forms.RadioButton();
+            this.comboBox_chooseAccount = new System.Windows.Forms.ComboBox();
+            this.labelExploreFriends = new System.Windows.Forms.Label();
+            this.comboBox_exploreFriends = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // clickMeButton
@@ -82,16 +89,65 @@ namespace bacefook
             resources.ApplyResources(this.richTxtBoxGraph, "richTxtBoxGraph");
             this.richTxtBoxGraph.Name = "richTxtBoxGraph";
             // 
-            // labelGraph
+            // labelGraphVisual
             // 
-            resources.ApplyResources(this.labelGraph, "labelGraph");
-            this.labelGraph.Name = "labelGraph";
+            resources.ApplyResources(this.labelGraphVisual, "labelGraphVisual");
+            this.labelGraphVisual.Name = "labelGraphVisual";
+            // 
+            // labelChooseAccount
+            // 
+            resources.ApplyResources(this.labelChooseAccount, "labelChooseAccount");
+            this.labelChooseAccount.Name = "labelChooseAccount";
+            // 
+            // labelChooseAlgorithm
+            // 
+            resources.ApplyResources(this.labelChooseAlgorithm, "labelChooseAlgorithm");
+            this.labelChooseAlgorithm.Name = "labelChooseAlgorithm";
+            // 
+            // radioButton_DFS
+            // 
+            resources.ApplyResources(this.radioButton_DFS, "radioButton_DFS");
+            this.radioButton_DFS.Name = "radioButton_DFS";
+            this.radioButton_DFS.TabStop = true;
+            this.radioButton_DFS.UseVisualStyleBackColor = true;
+            this.radioButton_DFS.CheckedChanged += new System.EventHandler(this.radioButton_DFS_CheckedChanged);
+            // 
+            // radioButton_BFS
+            // 
+            resources.ApplyResources(this.radioButton_BFS, "radioButton_BFS");
+            this.radioButton_BFS.Name = "radioButton_BFS";
+            this.radioButton_BFS.TabStop = true;
+            this.radioButton_BFS.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_chooseAccount
+            // 
+            this.comboBox_chooseAccount.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox_chooseAccount, "comboBox_chooseAccount");
+            this.comboBox_chooseAccount.Name = "comboBox_chooseAccount";
+            // 
+            // labelExploreFriends
+            // 
+            resources.ApplyResources(this.labelExploreFriends, "labelExploreFriends");
+            this.labelExploreFriends.Name = "labelExploreFriends";
+            // 
+            // comboBox_exploreFriends
+            // 
+            this.comboBox_exploreFriends.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox_exploreFriends, "comboBox_exploreFriends");
+            this.comboBox_exploreFriends.Name = "comboBox_exploreFriends";
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelGraph);
+            this.Controls.Add(this.comboBox_exploreFriends);
+            this.Controls.Add(this.labelExploreFriends);
+            this.Controls.Add(this.comboBox_chooseAccount);
+            this.Controls.Add(this.radioButton_BFS);
+            this.Controls.Add(this.radioButton_DFS);
+            this.Controls.Add(this.labelChooseAlgorithm);
+            this.Controls.Add(this.labelChooseAccount);
+            this.Controls.Add(this.labelGraphVisual);
             this.Controls.Add(this.richTxtBoxFilename);
             this.Controls.Add(this.btnUploadFile);
             this.Controls.Add(this.labelGraphInput);
@@ -115,7 +171,14 @@ namespace bacefook
         private System.Windows.Forms.Button btnUploadFile;
         private System.Windows.Forms.RichTextBox richTxtBoxFilename;
         private System.Windows.Forms.RichTextBox richTxtBoxGraph;
-        private System.Windows.Forms.Label labelGraph;
+        private System.Windows.Forms.Label labelGraphVisual;
+        private System.Windows.Forms.Label labelChooseAccount;
+        private System.Windows.Forms.Label labelChooseAlgorithm;
+        private System.Windows.Forms.RadioButton radioButton_DFS;
+        private System.Windows.Forms.RadioButton radioButton_BFS;
+        private System.Windows.Forms.ComboBox comboBox_chooseAccount;
+        private System.Windows.Forms.Label labelExploreFriends;
+        private System.Windows.Forms.ComboBox comboBox_exploreFriends;
     }
 }
 

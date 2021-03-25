@@ -59,14 +59,14 @@
   </resheader>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="clickMeButton.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Segoe UI Black, 16pt, style=Bold</value>
+    <value>Segoe UI, 14pt, style=Bold</value>
   </data>
   <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="clickMeButton.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>761, 407</value>
+    <value>973, 769</value>
   </data>
   <data name="clickMeButton.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>223, 99</value>
+    <value>156, 56</value>
   </data>
   <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
   <data name="clickMeButton.TabIndex" type="System.Int32, System.Private.CoreLib">
@@ -85,16 +85,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;clickMeButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>13</value>
   </data>
   <data name="labelTitle.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
+  <data name="labelTitle.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI Black, 20pt, style=Bold</value>
+  </data>
   <data name="labelTitle.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>441, 34</value>
+    <value>393, 24</value>
   </data>
   <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>373, 45</value>
+    <value>461, 54</value>
   </data>
   <data name="labelTitle.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>5</value>
@@ -112,25 +115,25 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="labelGraphInput.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="labelGraphInput.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Verdana, 16pt</value>
+    <value>Segoe UI, 14pt</value>
   </data>
   <data name="labelGraphInput.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>140, 108</value>
+    <value>75, 133</value>
   </data>
   <data name="labelGraphInput.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>305, 38</value>
+    <value>317, 38</value>
   </data>
   <data name="labelGraphInput.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>6</value>
   </data>
   <data name="labelGraphInput.Text" xml:space="preserve">
-    <value>Graph File         : </value>
+    <value>Graph File                    : </value>
   </data>
   <data name="&gt;&gt;labelGraphInput.Name" xml:space="preserve">
     <value>labelGraphInput</value>
@@ -142,17 +145,17 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelGraphInput.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>10</value>
   </data>
   <data name="btnUploadFile.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Verdana, 14pt</value>
+    <value>Segoe UI, 14pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnUploadFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnUploadFile.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>441, 108</value>
+    <value>393, 128</value>
   </data>
   <data name="btnUploadFile.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>150, 48</value>
@@ -161,7 +164,7 @@
     <value>7</value>
   </data>
   <data name="btnUploadFile.Text" xml:space="preserve">
-    <value>Upload</value>
+    <value>Browse</value>
   </data>
   <data name="&gt;&gt;btnUploadFile.Name" xml:space="preserve">
     <value>btnUploadFile</value>
@@ -173,13 +176,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnUploadFile.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>9</value>
+  </data>
+  <data name="richTxtBoxFilename.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
   </data>
   <data name="richTxtBoxFilename.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>629, 108</value>
+    <value>581, 128</value>
   </data>
   <data name="richTxtBoxFilename.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>185, 48</value>
+    <value>548, 48</value>
   </data>
   <data name="richTxtBoxFilename.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>9</value>
@@ -197,16 +203,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;richTxtBoxFilename.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="richTxtBoxGraph.Font" type="System.Drawing.Font, System.Drawing.Common">
     <value>Verdana, 14pt</value>
   </data>
   <data name="richTxtBoxGraph.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>56, 281</value>
+    <value>393, 294</value>
   </data>
   <data name="richTxtBoxGraph.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>404, 324</value>
+    <value>736, 299</value>
   </data>
   <data name="richTxtBoxGraph.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
@@ -224,36 +230,234 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;richTxtBoxGraph.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>12</value>
   </data>
-  <data name="labelGraph.AutoSize" type="System.Boolean, System.Private.CoreLib">
+  <data name="labelGraphVisual.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="labelGraph.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Verdana, 16pt</value>
+  <data name="labelGraphVisual.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
   </data>
-  <data name="labelGraph.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>56, 237</value>
+  <data name="labelGraphVisual.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>75, 294</value>
   </data>
-  <data name="labelGraph.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>140, 38</value>
+  <data name="labelGraphVisual.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>317, 38</value>
   </data>
-  <data name="labelGraph.TabIndex" type="System.Int32, System.Private.CoreLib">
+  <data name="labelGraphVisual.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>10</value>
   </data>
-  <data name="labelGraph.Text" xml:space="preserve">
-    <value>Graph: </value>
+  <data name="labelGraphVisual.Text" xml:space="preserve">
+    <value>Graph Visualization      : </value>
   </data>
-  <data name="&gt;&gt;labelGraph.Name" xml:space="preserve">
-    <value>labelGraph</value>
+  <data name="&gt;&gt;labelGraphVisual.Name" xml:space="preserve">
+    <value>labelGraphVisual</value>
   </data>
-  <data name="&gt;&gt;labelGraph.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelGraphVisual.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelGraph.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelGraphVisual.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelGraph.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelGraphVisual.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="labelChooseAccount.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="labelChooseAccount.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
+  </data>
+  <data name="labelChooseAccount.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>75, 635</value>
+  </data>
+  <data name="labelChooseAccount.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>308, 38</value>
+  </data>
+  <data name="labelChooseAccount.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>11</value>
+  </data>
+  <data name="labelChooseAccount.Text" xml:space="preserve">
+    <value>Choose account           :</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAccount.Name" xml:space="preserve">
+    <value>labelChooseAccount</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAccount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAccount.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelChooseAlgorithm.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="labelChooseAlgorithm.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
+  </data>
+  <data name="labelChooseAlgorithm.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>75, 205</value>
+  </data>
+  <data name="labelChooseAlgorithm.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>306, 38</value>
+  </data>
+  <data name="labelChooseAlgorithm.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>12</value>
+  </data>
+  <data name="labelChooseAlgorithm.Text" xml:space="preserve">
+    <value>Algorithm                    :</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAlgorithm.Name" xml:space="preserve">
+    <value>labelChooseAlgorithm</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAlgorithm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAlgorithm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelChooseAlgorithm.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="radioButton_DFS.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_DFS.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
+  </data>
+  <data name="radioButton_DFS.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>393, 205</value>
+  </data>
+  <data name="radioButton_DFS.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>91, 42</value>
+  </data>
+  <data name="radioButton_DFS.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>13</value>
+  </data>
+  <data name="radioButton_DFS.Text" xml:space="preserve">
+    <value>DFS</value>
+  </data>
+  <data name="&gt;&gt;radioButton_DFS.Name" xml:space="preserve">
+    <value>radioButton_DFS</value>
+  </data>
+  <data name="&gt;&gt;radioButton_DFS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_DFS.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radioButton_DFS.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="radioButton_BFS.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_BFS.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
+  </data>
+  <data name="radioButton_BFS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_BFS.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>558, 205</value>
+  </data>
+  <data name="radioButton_BFS.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>87, 42</value>
+  </data>
+  <data name="radioButton_BFS.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>14</value>
+  </data>
+  <data name="radioButton_BFS.Text" xml:space="preserve">
+    <value>BFS</value>
+  </data>
+  <data name="&gt;&gt;radioButton_BFS.Name" xml:space="preserve">
+    <value>radioButton_BFS</value>
+  </data>
+  <data name="&gt;&gt;radioButton_BFS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_BFS.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radioButton_BFS.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="comboBox_chooseAccount.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>393, 627</value>
+  </data>
+  <data name="comboBox_chooseAccount.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>91, 53</value>
+  </data>
+  <data name="comboBox_chooseAccount.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;comboBox_chooseAccount.Name" xml:space="preserve">
+    <value>comboBox_chooseAccount</value>
+  </data>
+  <data name="&gt;&gt;comboBox_chooseAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_chooseAccount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_chooseAccount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelExploreFriends.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="labelExploreFriends.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 14pt</value>
+  </data>
+  <data name="labelExploreFriends.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelExploreFriends.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>74, 707</value>
+  </data>
+  <data name="labelExploreFriends.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>307, 38</value>
+  </data>
+  <data name="labelExploreFriends.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>16</value>
+  </data>
+  <data name="labelExploreFriends.Text" xml:space="preserve">
+    <value>Explore friends with     :</value>
+  </data>
+  <data name="&gt;&gt;labelExploreFriends.Name" xml:space="preserve">
+    <value>labelExploreFriends</value>
+  </data>
+  <data name="&gt;&gt;labelExploreFriends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelExploreFriends.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelExploreFriends.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_exploreFriends.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>393, 699</value>
+  </data>
+  <data name="comboBox_exploreFriends.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>91, 53</value>
+  </data>
+  <data name="comboBox_exploreFriends.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;comboBox_exploreFriends.Name" xml:space="preserve">
+    <value>comboBox_exploreFriends</value>
+  </data>
+  <data name="&gt;&gt;comboBox_exploreFriends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_exploreFriends.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_exploreFriends.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
@@ -263,7 +467,7 @@
     <value>20, 45</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>1219, 664</value>
+    <value>1212, 853</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing.Common">
     <value>Segoe UI Black, 16pt, style=Bold</value>
