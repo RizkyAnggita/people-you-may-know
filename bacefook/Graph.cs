@@ -509,7 +509,7 @@ namespace bacefook
 
             Dictionary<string, ArrayList> nodesDepth1;
 
-            if (Equals(algoritma, "bfs"))
+            if (Equals(algoritma, "BFS"))
             {
                 nodesDepth1 = BFSFindNodeWithDepth(1);
             }
