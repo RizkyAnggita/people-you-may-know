@@ -357,6 +357,209 @@ namespace bacefook
             form.ShowDialog();
         }
 
+        public Dictionary<string, ArrayList> GetMutualFriend(string startNode, string algoritma)
+        {
+            Dictionary<string, ArrayList> mutualFriendResult = new Dictionary<string, ArrayList>();
+
+
+            Dictionary<string, ArrayList> nodesDepth1;
+
+            if (Equals(algoritma, "bfs"))
+            {
+                nodesDepth1 = BFSFindNodeWithDepth(1);
+            }
+            else
+            {
+                nodesDepth1 = DFSFindNodeWithDepth(1);
+            }
+
+            foreach (string node in nodes)
+            {
+                if (!Equals(startNode, node) && !nodesDepth1[startNode].Contains(node))
+                {
+                    ArrayList mutualFriendsTemp = new ArrayList();
+                    foreach (string n in nodesDepth1[node])
+                    {
+                        if (nodesDepth1[startNode].Contains(n))
+                        {
+                            mutualFriendsTemp.Add(n);
+                        }
+                    }
+
+                    mutualFriendResult.Add(node, mutualFriendsTemp);
+                }
+            }
+
+            return mutualFriendResult;
+        }
+
+        public Dictionary<string, ArrayList> BFSFindNodeWithDepth(int depth)
+        {
+            Dictionary<string, ArrayList> result = new Dictionary<string, ArrayList>();
+
+            foreach (string node in nodes)
+            {
+                ArrayList adjNodeArray = new ArrayList();
+
+                foreach (string n in nodes)
+                {
+                    Dictionary<string, int> distance = new Dictionary<string, int>();
+                    Dictionary<string, string> predPath = new Dictionary<string, string>();
+
+                    BFS2(node, n, ref distance, ref predPath);
+
+                    int distanceTemp = distance[n];
+
+                    if (distanceTemp == depth)
+                    {
+                        adjNodeArray.Add(n);
+                    }
+                }
+
+                result.Add(node, adjNodeArray);
+            }
+
+            return result;
+        }
+
+        public Dictionary<string, ArrayList> DFSFindNodeWithDepth(int depth)
+        {
+            Dictionary<string, ArrayList> result = new Dictionary<string, ArrayList>();
+
+            foreach (string node in nodes)
+            {
+                ArrayList adjNodeArray = new ArrayList();
+
+                foreach (string n in nodes)
+                {
+                    int distanceTemp = DFSFindDepth(node, n);
+
+                    if (distanceTemp == depth)
+                    {
+                        adjNodeArray.Add(n);
+                    }
+                }
+
+                result.Add(node, adjNodeArray);
+            }
+
+            return result;
+        }
+
+        public int DFSFindDepth(string startNode, string FinalNode)
+        {
+            Stack<string> s = new Stack<string>();
+            Stack<string> path = new Stack<string>();
+
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+            Dictionary<string, ArrayList> adjtemp = new Dictionary<string, ArrayList>();
+            Dictionary<string, int> distance = new Dictionary<string, int>();
+            bool found = false;
+            string trash;
+            int i;
+            string v;
+
+            bool IsAllNodeVisited(Dictionary<string, bool> visitedParam)
+            {
+                foreach (bool visit in visitedParam.Values)
+                {
+                    if (visit == false)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            foreach (string node in nodes)
+            {
+                visited[node] = false;
+                distance[node] = 1000;
+            }
+
+            s.Push(startNode);
+            visited[startNode] = true;
+            distance[startNode] = 0;
+
+            while (s.Count != 0 && !IsAllNodeVisited(visited))
+            {
+                v = s.Pop();
+                visited[v] = true;
+                i = 0;
+
+                //Untuk mengatur urutan stack yang dipush (yang lebih besar dipush lebih awal)
+                adjtemp[v] = adj[v];
+                adjtemp[v].Reverse();
+
+                int min = distance[v];
+
+                //Untuk menghitung shortest path tiap node dari startNode
+                foreach (string adjnode in adj[v])
+                {
+
+                    if (distance[adjnode] < min)
+                    {
+                        min = distance[adjnode] + 1;
+                    }
+                }
+                distance[v] = min;
+
+                //Ketemu finalNode
+                if (v == FinalNode)
+                {
+                    s.Push(v);
+                    path.Push(v);
+                    found = true;
+                    adj[v].Reverse();
+                    break;
+                }
+
+                //Untuk setiap node yang bertetangga, jika belum dikunjungi, maka kunjungi 
+                foreach (string adjnode in adjtemp[v])
+                {
+                    if (!visited[adjnode])
+                    {
+                        if (!s.Contains(adjnode))
+                        {
+                            distance[adjnode] = distance[v] + 1;
+                        }
+                        s.Push(adjnode);
+                        i++;
+                    }
+                }
+
+                //Jika i=0, maka node v tidak memiliki tetangga yang belum dikunjungi
+                //sehingga tidak ada yg dipush, berarti mentok -> backtrack
+                if (i == 0)
+                {
+                    if (path.Contains(v))
+                    //Jika terdapat v pada path, maka v harus dipop karena bukan solusi
+                    {
+                        trash = path.Pop();
+                    }
+                    else
+                    {
+                        //Jika tidak terdapat v pada path, maka kunjungi kembali node yang dikunjungi sebelum v
+                        //yaitu top pada stack path
+                        s.Push(path.Peek());
+                    }
+                }
+                else
+                {
+                    if (!path.Contains(v))
+                    {
+                        //Push node v ke path (stack of solusi)
+                        path.Push(v);
+
+                    }
+                }
+                //Reverse kembali urutan node
+                adj[v].Reverse();
+            }
+
+            return distance[FinalNode];
+        }
+
         ~Graph()
         {
             //Destructor

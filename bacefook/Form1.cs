@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,6 +85,37 @@ namespace bacefook
                 i++;
             }
             sr.Close();
+        }
+
+        static void FriendRecommendation(Graph g, string account, string algoritma)
+        {
+            Dictionary<string, ArrayList> result = g.GetMutualFriend(account, algoritma);
+            result = result.OrderBy(entry => -1 * entry.Value.Count).ToDictionary(entry => entry.Key, entry => entry.Value);
+
+            foreach (KeyValuePair<string, ArrayList> pair in result)
+            {
+
+                Console.Write(pair.Key);
+                Console.Write("\n");
+
+                Console.Write(pair.Value.Count);
+                Console.Write(" Mutual Friends ");
+
+                if (pair.Value.Count != 0)
+                {
+                    Console.Write(": ");
+                }
+
+
+                foreach (string n in pair.Value)
+                {
+                    Console.Write(n);
+                    Console.Write(" ");
+                }
+
+                Console.WriteLine("\n");
+
+            }
         }
 
         static void ExploreFriends(string friendA, string friendB, Graph g, string algorithm)
