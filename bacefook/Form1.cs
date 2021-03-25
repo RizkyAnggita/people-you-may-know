@@ -14,10 +14,20 @@ namespace bacefook
 {
     public partial class Form1 : Form
     {
+        string filename;
+        string readfile;
         string fullName;
+        string algorithm;
+        string selectedA;
+        string selectedB;
+        Graph g1 = new Graph();
         public Form1()
         {
             InitializeComponent();
+            comboBox_chooseAccount.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_exploreFriends.DropDownStyle = ComboBoxStyle.DropDown;
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,25 +37,29 @@ namespace bacefook
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            String hasil = ExploreFriends(selectedA, selectedB, g1, algorithm);
+            richTextBoxHasil.Text = hasil;
             
-            fullName = "RIZKY";
-            //            MessageBox.Show("Hey" + fullName + "!", "Submit botton clicked!", 
-            //                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (MessageBox.Show("Hey " + fullName + "!\n Are you above 18?", "Age",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                MessageBox.Show("Welcome!");
-            }
-            else
-            {
-                MessageBox.Show("Well just close the app");
-                this.Close();
-            }
         }
 
         private void labelGraphInput_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton_DFS_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_DFS.Checked)
+            {
+                algorithm = "DFS";
+            }
+        }
+        private void radioButton_BFS_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_BFS.Checked)
+            {
+                algorithm = "BFS";
+            }
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -55,24 +69,54 @@ namespace bacefook
             openFileDialog1.FilterIndex = 1;
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                string filename = openFileDialog1.FileName;
-                string readfile = File.ReadAllText(filename);
+                filename = openFileDialog1.FileName;
+                readfile = File.ReadAllText(filename);
                 richTxtBoxFilename.Text = filename;
                 richTxtBoxGraph.Text = readfile;
 
-                Graph g1 = new Graph();
                 TxtToGraph(filename, g1);
                 string b = g1.PrintGraph();
+                b += algorithm;
                 richTxtBoxGraph.Text = b;
+
                 g1.visualizedGraph();
+                
+                foreach(string node in g1.nodes)
+                {
+                    comboBox_exploreFriends.Items.Add(node);
+                    comboBox_chooseAccount.Items.Add(node);
+                }
             }    
         }
+
+        private void richTxtBoxGraph_TextChanged(object sender, EventArgs e)
+        {
+            string b = g1.PrintGraph();
+            b += algorithm;
+            richTxtBoxGraph.Text = b;
+        }
+
+        private void comboBox_chooseAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedA = this.comboBox_chooseAccount.GetItemText(this.comboBox_chooseAccount.SelectedItem);
+        }
+
+        private void comboBox_exploreFriends_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedB = comboBox_exploreFriends.GetItemText(comboBox_exploreFriends.SelectedItem);
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         static void TxtToGraph(string filepath, Graph g)
         {
             StreamReader sr = new StreamReader(filepath);
             string line = sr.ReadLine();
             int i = 0;
-            while(line!=null)
+            while (line != null)
             {
                 if (i != 0)
                 {
@@ -87,51 +131,54 @@ namespace bacefook
             sr.Close();
         }
 
-        static void FriendRecommendation(Graph g, string account, string algoritma)
+        static String FriendRecommendation(Graph g, string account, string algoritma)
         {
+            String stringResult = "";
             Dictionary<string, ArrayList> result = g.GetMutualFriend(account, algoritma);
             result = result.OrderBy(entry => -1 * entry.Value.Count).ToDictionary(entry => entry.Key, entry => entry.Value);
 
             foreach (KeyValuePair<string, ArrayList> pair in result)
             {
 
-                Console.Write(pair.Key);
-                Console.Write("\n");
-
-                Console.Write(pair.Value.Count);
-                Console.Write(" Mutual Friends ");
+                stringResult += (pair.Key);
+                stringResult += ("\n");
+ 
+                stringResult += (pair.Value.Count);
+                stringResult += (" Mutual Friends ");
 
                 if (pair.Value.Count != 0)
                 {
-                    Console.Write(": ");
+                    stringResult += (": ");
                 }
 
 
                 foreach (string n in pair.Value)
                 {
-                    Console.Write(n);
-                    Console.Write(" ");
+                    stringResult += (n);
+                    stringResult += (" ");
                 }
 
-                Console.WriteLine("\n");
-
+                stringResult += ("\n\n");
             }
+
+            return stringResult;
         }
 
-        static void ExploreFriends(string friendA, string friendB, Graph g, string algorithm)
+        static String ExploreFriends(string friendA, string friendB, Graph g, string algorithm)
         {
-            Console.WriteLine("\nNama akun: " + friendA + " dan " + friendB);
+            String hasil = "";
+            hasil += ("Nama akun: " + friendA + " dan " + friendB + "\n");
             if (algorithm == "BFS")
             {
-                Console.WriteLine("Explore Friend with BFS");
+                hasil += ("Explore Friend with BFS");
                 Dictionary<string, int> distance = new Dictionary<string, int>();
                 Dictionary<string, string> predPath = new Dictionary<string, string>();
 
                 //Tidak ketemu friendB
                 if (!g.BFS2(friendA, friendB, ref distance, ref predPath))
                 {
-                    Console.WriteLine("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.");
-                    return;
+                    hasil += ("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.");
+                    return hasil;
                 }
 
                 //Ketemu friendB
@@ -146,37 +193,33 @@ namespace bacefook
                     path.Add(predPath[before]);
                     before = predPath[before];
                 }
-                Console.WriteLine();
-                Console.WriteLine(distance[friendB] - 1 + "th-degree connection");
+                hasil += "\n";
+                hasil += distance[friendB] - 1 + "th-degree connection\n";
                 for (int i = path.Count - 1; i >= 0; i--)
                 {
-                    Console.Write(path[i]);
+                    hasil += path[i];
                     if (i != 0)
                     {
-                        Console.Write("->");
+                        hasil += ("->");
                     }
                 }
-                Console.WriteLine();
+                hasil += "\n";
+                return hasil;
 
             }
             else if (algorithm == "DFS")
             {
-                Console.WriteLine("\nExplore Friend with DFS");
-                g.DFSIterative(friendA, friendB);
-                Console.WriteLine();
+                hasil += ("Explore Friend with DFS\n");
+                hasil += g.DFSIterativeString(friendA, friendB);
+                hasil += "\n";
+                return hasil;
 
             }
             else
             {
-                Console.WriteLine("False");
+                hasil += ("False");
+                return hasil;
             }
-
-
-        }
-
-        private void radioButton_DFS_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

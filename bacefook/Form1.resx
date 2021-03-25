@@ -63,7 +63,7 @@
   </data>
   <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="clickMeButton.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>973, 769</value>
+    <value>526, 624</value>
   </data>
   <data name="clickMeButton.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>156, 56</value>
@@ -85,7 +85,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;clickMeButton.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="labelTitle.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -115,7 +115,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="labelGraphInput.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelGraphInput.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnUploadFile.Font" type="System.Drawing.Font, System.Drawing.Common">
     <value>Segoe UI, 14pt</value>
@@ -176,7 +176,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnUploadFile.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="richTxtBoxFilename.Font" type="System.Drawing.Font, System.Drawing.Common">
     <value>Segoe UI, 14pt</value>
@@ -203,7 +203,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;richTxtBoxFilename.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="richTxtBoxGraph.Font" type="System.Drawing.Font, System.Drawing.Common">
     <value>Verdana, 14pt</value>
@@ -212,7 +212,7 @@
     <value>393, 294</value>
   </data>
   <data name="richTxtBoxGraph.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>736, 299</value>
+    <value>675, 255</value>
   </data>
   <data name="richTxtBoxGraph.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
@@ -230,7 +230,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;richTxtBoxGraph.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="labelGraphVisual.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -260,7 +260,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelGraphVisual.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="labelChooseAccount.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -269,7 +269,7 @@
     <value>Segoe UI, 14pt</value>
   </data>
   <data name="labelChooseAccount.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>75, 635</value>
+    <value>75, 563</value>
   </data>
   <data name="labelChooseAccount.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>308, 38</value>
@@ -290,7 +290,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelChooseAccount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="labelChooseAlgorithm.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -320,7 +320,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelChooseAlgorithm.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="radioButton_DFS.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -350,7 +350,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;radioButton_DFS.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="radioButton_BFS.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -383,10 +383,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;radioButton_BFS.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="comboBox_chooseAccount.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>393, 627</value>
+    <value>393, 555</value>
   </data>
   <data name="comboBox_chooseAccount.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>91, 53</value>
@@ -404,7 +404,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBox_chooseAccount.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="labelExploreFriends.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -416,7 +416,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelExploreFriends.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>74, 707</value>
+    <value>74, 635</value>
   </data>
   <data name="labelExploreFriends.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>307, 38</value>
@@ -437,10 +437,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelExploreFriends.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="comboBox_exploreFriends.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>393, 699</value>
+    <value>393, 627</value>
   </data>
   <data name="comboBox_exploreFriends.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>91, 53</value>
@@ -458,6 +458,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBox_exploreFriends.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTextBoxHasil.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>85, 686</value>
+  </data>
+  <data name="richTextBoxHasil.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>882, 395</value>
+  </data>
+  <data name="richTextBoxHasil.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>18</value>
+  </data>
+  <data name="richTextBoxHasil.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxHasil.Name" xml:space="preserve">
+    <value>richTextBoxHasil</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxHasil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxHasil.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxHasil.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
@@ -467,7 +491,7 @@
     <value>20, 45</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>1212, 853</value>
+    <value>1282, 1050</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing.Common">
     <value>Segoe UI Black, 16pt, style=Bold</value>

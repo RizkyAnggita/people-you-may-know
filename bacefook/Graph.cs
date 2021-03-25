@@ -7,8 +7,8 @@ namespace bacefook
     public class Graph
     {
         //Attribute
-        private ArrayList nodes;
-        private Dictionary<string, ArrayList> adj;
+        public ArrayList nodes;
+        public Dictionary<string, ArrayList> adj;
 
         //Method
         public Graph() //ctor
@@ -328,6 +328,151 @@ namespace bacefook
             //{
             //    Console.WriteLine(dist.Key + ":" + dist.Value);
             //}
+
+        }
+        public String DFSIterativeString(string startNode, string FinalNode)
+        {
+            Stack<string> s = new Stack<string>();
+            Stack<string> path = new Stack<string>();
+
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+            Dictionary<string, ArrayList> adjtemp = new Dictionary<string, ArrayList>();
+            Dictionary<string, int> distance = new Dictionary<string, int>();
+            bool found = false;
+            string trash;
+            int i;
+            string v;
+            string hasil = "";
+
+            bool IsAllNodeVisited(Dictionary<string, bool> visited)
+            {
+                foreach (bool visit in visited.Values)
+                {
+                    if (visit == false)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            foreach (string node in this.nodes)
+            {
+                visited[node] = false;
+                distance[node] = 1000;
+            }
+
+            s.Push(startNode);
+            visited[startNode] = true;
+            distance[startNode] = 0;
+
+            while (s.Count != 0 && !IsAllNodeVisited(visited))
+            {
+                v = s.Pop();
+                visited[v] = true;
+                i = 0;
+
+                //Untuk mengatur urutan stack yang dipush (yang lebih besar dipush lebih awal)
+                adjtemp[v] = this.adj[v];
+                adjtemp[v].Reverse();
+
+                int min = distance[v];
+
+                //Untuk menghitung shortest path tiap node dari startNode
+                foreach (string adjnode in this.adj[v])
+                {
+
+                    if (distance[adjnode] < min)
+                    {
+                        min = distance[adjnode] + 1;
+                    }
+                }
+                distance[v] = min;
+
+                //Ketemu finalNode
+                if (v == FinalNode)
+                {
+                    s.Push(v);
+                    path.Push(v);
+                    found = true;
+                    this.adj[v].Reverse();
+                    break;
+                }
+
+                //Untuk setiap node yang bertetangga, jika belum dikunjungi, maka kunjungi 
+                foreach (string adjnode in adjtemp[v])
+                {
+                    if (!visited[adjnode])
+                    {
+                        if (!s.Contains(adjnode))
+                        {
+                            distance[adjnode] = distance[v] + 1;
+                        }
+                        s.Push(adjnode);
+                        i++;
+                    }
+                }
+
+                //Jika i=0, maka node v tidak memiliki tetangga yang belum dikunjungi
+                //sehingga tidak ada yg dipush, berarti mentok -> backtrack
+                if (i == 0)
+                {
+                    if (path.Contains(v))
+                    //Jika terdapat v pada path, maka v harus dipop karena bukan solusi
+                    {
+                        trash = path.Pop();
+                    }
+                    else
+                    {
+                        //Jika tidak terdapat v pada path, maka kunjungi kembali node yang dikunjungi sebelum v
+                        //yaitu top pada stack path
+                        s.Push(path.Peek());
+                    }
+                }
+                else
+                {
+                    if (!path.Contains(v))
+                    {
+                        //Push node v ke path (stack of solusi)
+                        path.Push(v);
+
+                    }
+                }
+                //Reverse kembali urutan node
+                this.adj[v].Reverse();
+            }
+
+            if (!found)
+            {
+                hasil += ("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.\n");
+            }
+            else
+            {
+               hasil += (distance[FinalNode] - 1) + "th-degree connection\n";
+                ArrayList pathList = new ArrayList();
+                foreach (string node in path)
+                {
+                    //Console.Write(node + " ");
+                    pathList.Add(node);
+                }
+                for (i = pathList.Count - 1; i >= 0; i--)
+                {
+                    hasil+= (pathList[i]);
+                    if (i != 0)
+                    {
+                        hasil += ("->");
+                    }
+                }
+
+            }
+
+            hasil += "\n";
+            //Untuk mencetak jarak sebuah node dari titik asal
+            //foreach (KeyValuePair<string, int> dist in distance)
+            //{
+            //    Console.WriteLine(dist.Key + ":" + dist.Value);
+            //}
+            return hasil;
 
         }
 
