@@ -63,7 +63,7 @@
   </data>
   <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="clickMeButton.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>526, 624</value>
+    <value>542, 521</value>
   </data>
   <data name="clickMeButton.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>156, 56</value>
@@ -209,10 +209,10 @@
     <value>Verdana, 14pt</value>
   </data>
   <data name="richTxtBoxGraph.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>393, 294</value>
+    <value>393, 253</value>
   </data>
   <data name="richTxtBoxGraph.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>675, 255</value>
+    <value>675, 204</value>
   </data>
   <data name="richTxtBoxGraph.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
@@ -239,7 +239,7 @@
     <value>Segoe UI, 14pt</value>
   </data>
   <data name="labelGraphVisual.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>75, 294</value>
+    <value>75, 253</value>
   </data>
   <data name="labelGraphVisual.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>317, 38</value>
@@ -269,7 +269,7 @@
     <value>Segoe UI, 14pt</value>
   </data>
   <data name="labelChooseAccount.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>75, 563</value>
+    <value>75, 471</value>
   </data>
   <data name="labelChooseAccount.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>308, 38</value>
@@ -385,11 +385,14 @@
   <data name="&gt;&gt;radioButton_BFS.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="comboBox_chooseAccount.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 14pt</value>
+  </data>
   <data name="comboBox_chooseAccount.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>393, 555</value>
+    <value>393, 463</value>
   </data>
   <data name="comboBox_chooseAccount.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>91, 53</value>
+    <value>91, 42</value>
   </data>
   <data name="comboBox_chooseAccount.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>15</value>
@@ -416,7 +419,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelExploreFriends.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>74, 635</value>
+    <value>74, 543</value>
   </data>
   <data name="labelExploreFriends.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>307, 38</value>
@@ -439,11 +442,14 @@
   <data name="&gt;&gt;labelExploreFriends.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="comboBox_exploreFriends.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 14pt</value>
+  </data>
   <data name="comboBox_exploreFriends.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>393, 627</value>
+    <value>393, 535</value>
   </data>
   <data name="comboBox_exploreFriends.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>91, 53</value>
+    <value>91, 42</value>
   </data>
   <data name="comboBox_exploreFriends.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>17</value>
@@ -460,11 +466,14 @@
   <data name="&gt;&gt;comboBox_exploreFriends.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="richTextBoxHasil.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Verdana, 12pt</value>
+  </data>
   <data name="richTextBoxHasil.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>85, 686</value>
+    <value>75, 593</value>
   </data>
   <data name="richTextBoxHasil.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>882, 395</value>
+    <value>918, 420</value>
   </data>
   <data name="richTextBoxHasil.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>18</value>

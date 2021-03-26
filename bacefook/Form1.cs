@@ -18,8 +18,8 @@ namespace bacefook
         string readfile;
         string fullName;
         string algorithm;
-        string selectedA;
-        string selectedB;
+        string selectedA = "";
+        string selectedB = "";
         Graph g1 = new Graph();
         public Form1()
         {
@@ -28,23 +28,29 @@ namespace bacefook
             comboBox_exploreFriends.DropDownStyle = ComboBoxStyle.DropDown;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            String hasil = ExploreFriends(selectedA, selectedB, g1, algorithm);
-            hasil += "\nFriend Recommendation\n";
-            hasil += FriendRecommendation(g1, selectedA, algorithm);
-            richTextBoxHasil.Text = hasil;
-            g1.visualizedGraph(selectedA, selectedB, algorithm);
-        }
-
-        private void labelGraphInput_Click(object sender, EventArgs e)
-        {
-
+            if(radioButton_BFS.Checked==false && radioButton_DFS.Checked==false)
+            {
+                MessageBox.Show("Algoritma belum dipilih!","Warning" ,MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (selectedA == "" || selectedB == "")
+                {
+                    MessageBox.Show("Choose account atau Explore Friend with belum dipilih!", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    String hasil = ExploreFriends(selectedA, selectedB, g1, algorithm);
+                    hasil += "\nFriend Recommendation\n";
+                    hasil += FriendRecommendation(g1, selectedA, algorithm);
+                    richTextBoxHasil.Text = hasil;
+                    g1.visualizedGraph(selectedA, selectedB, algorithm);
+                }
+            }
+            
         }
 
         private void radioButton_DFS_CheckedChanged(object sender, EventArgs e)
@@ -83,6 +89,8 @@ namespace bacefook
                 {
                     comboBox_exploreFriends.Items.Add(node);
                     comboBox_chooseAccount.Items.Add(node);
+
+                    
                 }
             }    
         }
@@ -102,11 +110,6 @@ namespace bacefook
         private void comboBox_exploreFriends_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedB = comboBox_exploreFriends.GetItemText(comboBox_exploreFriends.SelectedItem);
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         static void TxtToGraph(string filepath, Graph g)

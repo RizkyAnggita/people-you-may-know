@@ -69,7 +69,6 @@ namespace bacefook
             // 
             resources.ApplyResources(this.labelGraphInput, "labelGraphInput");
             this.labelGraphInput.Name = "labelGraphInput";
-            this.labelGraphInput.Click += new System.EventHandler(this.labelGraphInput_Click);
             // 
             // btnUploadFile
             // 
@@ -81,6 +80,7 @@ namespace bacefook
             // 
             // richTxtBoxFilename
             // 
+            this.richTxtBoxFilename.BackColor = System.Drawing.SystemColors.HighlightText;
             this.richTxtBoxFilename.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.richTxtBoxFilename, "richTxtBoxFilename");
             this.richTxtBoxFilename.Name = "richTxtBoxFilename";
@@ -124,8 +124,8 @@ namespace bacefook
             // 
             // comboBox_chooseAccount
             // 
-            this.comboBox_chooseAccount.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox_chooseAccount, "comboBox_chooseAccount");
+            this.comboBox_chooseAccount.FormattingEnabled = true;
             this.comboBox_chooseAccount.Name = "comboBox_chooseAccount";
             this.comboBox_chooseAccount.SelectedIndexChanged += new System.EventHandler(this.comboBox_chooseAccount_SelectedIndexChanged);
             // 
@@ -136,8 +136,8 @@ namespace bacefook
             // 
             // comboBox_exploreFriends
             // 
-            this.comboBox_exploreFriends.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox_exploreFriends, "comboBox_exploreFriends");
+            this.comboBox_exploreFriends.FormattingEnabled = true;
             this.comboBox_exploreFriends.Name = "comboBox_exploreFriends";
             this.comboBox_exploreFriends.SelectedIndexChanged += new System.EventHandler(this.comboBox_exploreFriends_SelectedIndexChanged);
             // 
@@ -145,7 +145,6 @@ namespace bacefook
             // 
             resources.ApplyResources(this.richTextBoxHasil, "richTextBoxHasil");
             this.richTextBoxHasil.Name = "richTextBoxHasil";
-            this.richTextBoxHasil.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Form1
             // 
@@ -168,7 +167,6 @@ namespace bacefook
             this.Controls.Add(this.clickMeButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
