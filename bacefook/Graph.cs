@@ -118,182 +118,7 @@ namespace bacefook
             return false;
         }
 
-        public void DFS(string startNode, string finalNode)
-        {
-            Dictionary<string, bool> visited = new Dictionary<string, bool>();
-            foreach (string node in this.nodes)
-            {
-                visited[node] = false;
-
-            }
-            Console.Write("\nDFS: ");
-            DFSRecursive(startNode, finalNode, ref visited);
-
-            void DFSRecursive(string startNode, string finalNode, ref Dictionary<string, bool> visited)
-            {
-                visited[startNode] = true;
-                Console.Write(startNode + " ");
-
-                foreach (string adjnode in this.adj[startNode])
-                {
-                    if (!visited[adjnode])
-                    {
-                        //if (adjnode == finalNode)
-                        //{
-                        //    return;
-                        //}
-                        DFSRecursive(adjnode, finalNode, ref visited);
-                    }
-                }
-            }
-
-        }
-
-
-        public void DFSIterative(string startNode, string FinalNode)
-        {
-            Stack<string> s = new Stack<string>();
-            Stack<string> path = new Stack<string>();
-
-            Dictionary<string, bool> visited = new Dictionary<string, bool>();
-            Dictionary<string, ArrayList> adjtemp = new Dictionary<string, ArrayList>();
-            Dictionary<string, int> distance = new Dictionary<string, int>();
-            bool found = false;
-            string trash;
-            int i;
-            string v;
-
-            bool IsAllNodeVisited(Dictionary<string, bool> visited)
-            {
-                foreach (bool visit in visited.Values)
-                {
-                    if (visit == false)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            foreach (string node in this.nodes)
-            {
-                visited[node] = false;
-                distance[node] = 1000;
-            }
-
-            s.Push(startNode);
-            visited[startNode] = true;
-            distance[startNode] = 0;
-
-            while (s.Count != 0 && !IsAllNodeVisited(visited))
-            {
-                v = s.Pop();
-                visited[v] = true;
-                i = 0;
-
-                //Untuk mengatur urutan stack yang dipush (yang lebih besar dipush lebih awal)
-                adjtemp[v] = this.adj[v];
-                adjtemp[v].Reverse();
-
-                int min = distance[v];
-
-                //Untuk menghitung shortest path tiap node dari startNode
-                foreach (string adjnode in this.adj[v])
-                {
-
-                    if (distance[adjnode] < min)
-                    {
-                        min = distance[adjnode] + 1;
-                    }
-                }
-                distance[v] = min;
-
-                //Ketemu finalNode
-                if (v == FinalNode)
-                {
-                    s.Push(v);
-                    path.Push(v);
-                    found = true;
-                    this.adj[v].Reverse();
-                    break;
-                }
-
-                //Untuk setiap node yang bertetangga, jika belum dikunjungi, maka kunjungi 
-                foreach (string adjnode in adjtemp[v])
-                {
-                    if (!visited[adjnode])
-                    {
-                        if (!s.Contains(adjnode))
-                        {
-                            distance[adjnode] = distance[v] + 1;
-                        }
-                        s.Push(adjnode);
-                        i++;
-                    }
-                }
-
-                //Jika i=0, maka node v tidak memiliki tetangga yang belum dikunjungi
-                //sehingga tidak ada yg dipush, berarti mentok -> backtrack
-                if (i == 0)
-                {
-                    if (path.Contains(v))
-                    //Jika terdapat v pada path, maka v harus dipop karena bukan solusi
-                    {
-                        trash = path.Pop();
-                    }
-                    else
-                    {
-                        //Jika tidak terdapat v pada path, maka kunjungi kembali node yang dikunjungi sebelum v
-                        //yaitu top pada stack path
-                        s.Push(path.Peek());
-                    }
-                }
-                else
-                {
-                    if (!path.Contains(v))
-                    {
-                        //Push node v ke path (stack of solusi)
-                        path.Push(v);
-
-                    }
-                }
-                //Reverse kembali urutan node
-                this.adj[v].Reverse();
-            }
-
-            if (!found)
-            {
-                Console.WriteLine("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.");
-            }
-            else
-            {
-                Console.WriteLine(distance[FinalNode] - 1 + "th-degree connection");
-                ArrayList pathList = new ArrayList();
-                foreach (string node in path)
-                {
-                    //Console.Write(node + " ");
-                    pathList.Add(node);
-                }
-                for (i = pathList.Count - 1; i >= 0; i--)
-                {
-                    Console.Write(pathList[i]);
-                    if (i != 0)
-                    {
-                        Console.Write("->");
-                    }
-                }
-
-            }
-
-            Console.WriteLine();
-            //Untuk mencetak jarak sebuah node dari titik asal
-            //foreach (KeyValuePair<string, int> dist in distance)
-            //{
-            //    Console.WriteLine(dist.Key + ":" + dist.Value);
-            //}
-
-        }
-        public String DFSIterativeString(string startNode, string FinalNode, ref Stack<string> pathRet)
+        public String DFSIterativeString(string startNode, string FinalNode, ref List<string> pathRet)
         {
             Stack<string> s = new Stack<string>();
             Stack<string> path = new Stack<string>();
@@ -412,9 +237,8 @@ namespace bacefook
             }
             else
             {
-                pathRet = path;
                hasil += (distance[FinalNode] - 1) + "th-degree connection\n";
-                ArrayList pathList = new ArrayList();
+                List<string> pathList = new List<string>();
                 foreach (string node in path)
                 {
                     //Console.Write(node + " ");
@@ -422,7 +246,9 @@ namespace bacefook
                 }
                 for (i = pathList.Count - 1; i >= 0; i--)
                 {
+                    string temp = pathList[i];
                     hasil+= (pathList[i]);
+                    pathRet.Add(temp);
                     if (i != 0)
                     {
                         hasil += ("->");
@@ -430,45 +256,31 @@ namespace bacefook
                 }
 
             }
-
             hasil += "\n";
-            //Untuk mencetak jarak sebuah node dari titik asal
-            //foreach (KeyValuePair<string, int> dist in distance)
-            //{
-            //    Console.WriteLine(dist.Key + ":" + dist.Value);
-            //}
             return hasil;
-
         }
 
         public void visualizedGraph(string friendA, string friendB, string algorithm)
         {
+            //BFS
+            Dictionary<string, int> distance = new Dictionary<string, int>();
+            Dictionary<string, string> predPath = new Dictionary<string, string>();
+            List<string> path = new List<string>();
+
+            //DFS
+            List<string> pathRet = new List<string>();
+
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
             //create a viewer object 
             Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             //create a graph object 
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
             //create the graph content
-            foreach (string node in this.nodes)
-            {
-                foreach (string adjnode in this.adj[node])
-                {
-                    graph.AddEdge(node, adjnode);
-                }
-            }
-            //bind the graph to the viewer 
-            viewer.Graph = graph;
-            //associate the viewer with the form 
-            form.SuspendLayout();
-            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            form.Controls.Add(viewer);
+            Stack<string> nodeIncluded = new Stack<string>();
 
             if (algorithm == "BFS")
             {
-                Dictionary<string, int> distance = new Dictionary<string, int>();
-                Dictionary<string, string> predPath = new Dictionary<string, string>();
                 this.BFS2(friendA, friendB, ref distance, ref predPath);
-                List<string> path = new List<string>();
                 string before = friendB;
                 path.Add(before);
 
@@ -478,22 +290,69 @@ namespace bacefook
                     path.Add(predPath[before]);
                     before = predPath[before];
                 }
-                foreach (string node in path)
+
+                foreach (string node in this.nodes)
                 {
+                    nodeIncluded.Push(node);
+                    foreach (string adjnode in this.adj[node])
+                    {
+                        if (!nodeIncluded.Contains(adjnode))
+                        {
+                            var Edge = graph.AddEdge(node, adjnode);
+                            Edge.Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
+                            Edge.Attr.ArrowheadAtSource = Microsoft.Msagl.Drawing.ArrowStyle.None;
+                            if (path.Contains(node) && path.Contains(adjnode))
+                            {
+                                Edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                            }
+                        }
+
+                    }
+                }
+                foreach (string node in path)
+                { 
                     graph.FindNode(node).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
                 }
+
             }
             else if (algorithm == "DFS")
             {
-                Stack<string> pathRet = new Stack<string>();
                 String hasil = this.DFSIterativeString(friendA, friendB, ref pathRet);
-
-                foreach(string node in pathRet)
+                Stack<string> sudahdiwarnai = new Stack<string>();
+                foreach (string node in this.nodes)
                 {
-                    graph.FindNode(node).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                    nodeIncluded.Push(node);
+                    foreach (string adjnode in this.adj[node])
+                    {
+                        if (!nodeIncluded.Contains(adjnode))
+                        {
+                            var Edge = graph.AddEdge(node, adjnode);
+                            Edge.Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
+                            Edge.Attr.ArrowheadAtSource = Microsoft.Msagl.Drawing.ArrowStyle.None;
+                        
+                            if (pathRet.Contains(node) && pathRet.Contains(adjnode)
+                               && ((pathRet.IndexOf(node)==pathRet.IndexOf(adjnode)-1 ) ||
+                               (pathRet.IndexOf(node)-1 == pathRet.IndexOf(adjnode))))
+                            {
+                                Edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                            }
+                        }
+
+                    }
+                }
+                foreach (string node in pathRet)
+                {
+                        graph.FindNode(node).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
                 }
 
             }
+            //bind the graph to the viewer 
+            viewer.Graph = graph;
+            //associate the viewer with the form 
+            form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            form.Controls.Add(viewer);
+
             form.ResumeLayout();
             //show the form 
             form.ShowDialog();

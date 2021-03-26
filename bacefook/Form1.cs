@@ -207,7 +207,7 @@ namespace bacefook
             }
             else if (algorithm == "DFS")
             {
-                Stack<string> pathRet = new Stack<string>();
+                List<string> pathRet = new List<string>();
                 hasil += ("Explore Friend with DFS\n");
                 hasil += g.DFSIterativeString(friendA, friendB, ref pathRet);
                 hasil += "\n";
