@@ -16,7 +16,6 @@ namespace bacefook
     {
         string filename;
         string readfile;
-        string fullName;
         string algorithm;
         string selectedA = "";
         string selectedB = "";
@@ -169,7 +168,7 @@ namespace bacefook
             hasil += ("Nama akun: " + friendA + " dan " + friendB + "\n");
             if (algorithm == "BFS")
             {
-                hasil += ("Explore Friend with BFS");
+                hasil += ("Explore Friend with BFS\n");
                 Dictionary<string, int> distance = new Dictionary<string, int>();
                 Dictionary<string, string> predPath = new Dictionary<string, string>();
 

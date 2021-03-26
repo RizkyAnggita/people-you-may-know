@@ -131,6 +131,12 @@ namespace bacefook
             int i;
             string v;
             string hasil = "";
+             
+            if(this.adj[startNode].Contains(FinalNode) == false)
+            {
+                hasil += ("\nTidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.\n");
+                return hasil;
+            }
 
             bool IsAllNodeVisited(Dictionary<string, bool> visited)
             {
@@ -232,7 +238,7 @@ namespace bacefook
 
             if (!found)
             {
-                hasil += ("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.\n");
+                hasil += ("\nTidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.\n");
                 pathRet = null;
             }
             else
@@ -449,6 +455,10 @@ namespace bacefook
 
         public int DFSFindDepth(string startNode, string FinalNode)
         {
+            if (this.adj[startNode].Contains(FinalNode) == false)
+            {
+                return -1;
+            }
             Stack<string> s = new Stack<string>();
             Stack<string> path = new Stack<string>();
 
