@@ -45,6 +45,7 @@ namespace bacefook
             this.comboBox_chooseAccount = new System.Windows.Forms.ComboBox();
             this.labelExploreFriends = new System.Windows.Forms.Label();
             this.comboBox_exploreFriends = new System.Windows.Forms.ComboBox();
+            this.richTextBoxHasil = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // clickMeButton
@@ -88,6 +89,7 @@ namespace bacefook
             // 
             resources.ApplyResources(this.richTxtBoxGraph, "richTxtBoxGraph");
             this.richTxtBoxGraph.Name = "richTxtBoxGraph";
+            this.richTxtBoxGraph.TextChanged += new System.EventHandler(this.richTxtBoxGraph_TextChanged);
             // 
             // labelGraphVisual
             // 
@@ -118,12 +120,14 @@ namespace bacefook
             this.radioButton_BFS.Name = "radioButton_BFS";
             this.radioButton_BFS.TabStop = true;
             this.radioButton_BFS.UseVisualStyleBackColor = true;
+            this.radioButton_BFS.CheckedChanged += new System.EventHandler(this.radioButton_BFS_CheckedChanged);
             // 
             // comboBox_chooseAccount
             // 
             this.comboBox_chooseAccount.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox_chooseAccount, "comboBox_chooseAccount");
             this.comboBox_chooseAccount.Name = "comboBox_chooseAccount";
+            this.comboBox_chooseAccount.SelectedIndexChanged += new System.EventHandler(this.comboBox_chooseAccount_SelectedIndexChanged);
             // 
             // labelExploreFriends
             // 
@@ -135,11 +139,19 @@ namespace bacefook
             this.comboBox_exploreFriends.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox_exploreFriends, "comboBox_exploreFriends");
             this.comboBox_exploreFriends.Name = "comboBox_exploreFriends";
+            this.comboBox_exploreFriends.SelectedIndexChanged += new System.EventHandler(this.comboBox_exploreFriends_SelectedIndexChanged);
+            // 
+            // richTextBoxHasil
+            // 
+            resources.ApplyResources(this.richTextBoxHasil, "richTextBoxHasil");
+            this.richTextBoxHasil.Name = "richTextBoxHasil";
+            this.richTextBoxHasil.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.richTextBoxHasil);
             this.Controls.Add(this.comboBox_exploreFriends);
             this.Controls.Add(this.labelExploreFriends);
             this.Controls.Add(this.comboBox_chooseAccount);
@@ -179,6 +191,7 @@ namespace bacefook
         private System.Windows.Forms.ComboBox comboBox_chooseAccount;
         private System.Windows.Forms.Label labelExploreFriends;
         private System.Windows.Forms.ComboBox comboBox_exploreFriends;
+        private System.Windows.Forms.RichTextBox richTextBoxHasil;
     }
 }
 
