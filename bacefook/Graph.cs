@@ -155,7 +155,7 @@ namespace bacefook
             visited[startNode] = true;
             distance[startNode] = 0;
 
-            while (s.Count != 0 && !IsAllNodeVisited(visited))
+            while (s.Count != 0 || IsAllNodeVisited(visited))
             {
                 v = s.Pop();
                 visited[v] = true;
@@ -215,6 +215,11 @@ namespace bacefook
                     {
                         //Jika tidak terdapat v pada path, maka kunjungi kembali node yang dikunjungi sebelum v
                         //yaitu top pada stack path
+                        if (path.Count == 0)
+                        {
+                            hasil += ("\nTidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.\n");
+                            return hasil;
+                        }
                         s.Push(path.Peek());
                     }
                 }
@@ -331,20 +336,28 @@ namespace bacefook
                             Edge.Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
                             Edge.Attr.ArrowheadAtSource = Microsoft.Msagl.Drawing.ArrowStyle.None;
                         
-                            if (pathRet.Contains(node) && pathRet.Contains(adjnode)
-                               && ((pathRet.IndexOf(node)==pathRet.IndexOf(adjnode)-1 ) ||
-                               (pathRet.IndexOf(node)-1 == pathRet.IndexOf(adjnode))))
+                            if(pathRet!= null)
                             {
-                                Edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                                if (pathRet.Contains(node) && pathRet.Contains(adjnode)
+                               && ((pathRet.IndexOf(node) == pathRet.IndexOf(adjnode) - 1) ||
+                               (pathRet.IndexOf(node) - 1 == pathRet.IndexOf(adjnode))))
+                                {
+                                    Edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                                }
                             }
+                            
                         }
 
                     }
                 }
-                foreach (string node in pathRet)
+                if (pathRet != null)
                 {
+                    foreach (string node in pathRet)
+                    {
                         graph.FindNode(node).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                    }
                 }
+                
 
             }
             //bind the graph to the viewer 
@@ -543,6 +556,10 @@ namespace bacefook
                     {
                         //Jika tidak terdapat v pada path, maka kunjungi kembali node yang dikunjungi sebelum v
                         //yaitu top pada stack path
+                        if (path.Count == 0)
+                        {
+                            return -1;
+                        }
                         s.Push(path.Peek());
                     }
                 }
