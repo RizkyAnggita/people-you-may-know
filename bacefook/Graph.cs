@@ -72,43 +72,6 @@ namespace bacefook
             return graph;
         }
 
-        public void BFS(string startNode, string finalNode)
-        {
-            if (!this.nodes.Contains(startNode))
-            {
-                Console.WriteLine("Start Node tidak dapat ditemukan!");
-                return;
-            }
-
-            Queue<string> livingNode = new Queue<string>();
-            Dictionary<string, bool> visited = new Dictionary<string, bool>();
-
-            foreach (string node in this.nodes)
-            {
-                visited[node] = false;
-
-            }
-
-            Console.Write("BFS : " + startNode + " ");
-            visited[startNode] = true;
-            livingNode.Enqueue(startNode);
-
-            while (livingNode.Count != 0)
-            {
-                string temp = livingNode.Dequeue();
-                foreach (string adjnode in this.adj[temp])
-                {
-                    if (!visited[adjnode])
-                    {
-                        Console.Write(adjnode + " ");
-                        livingNode.Enqueue(adjnode);
-                        visited[adjnode] = true;
-                    }
-                }
-            }
-
-        }
-
         public bool BFS2(string startNode, string finalNode, ref Dictionary<string, int> distance, ref Dictionary<string, string> predPath)
         {
 
@@ -330,7 +293,7 @@ namespace bacefook
             //}
 
         }
-        public String DFSIterativeString(string startNode, string FinalNode)
+        public String DFSIterativeString(string startNode, string FinalNode, ref Stack<string> pathRet)
         {
             Stack<string> s = new Stack<string>();
             Stack<string> path = new Stack<string>();
@@ -445,9 +408,11 @@ namespace bacefook
             if (!found)
             {
                 hasil += ("Tidak ada jalur koneksi yang tersedia.\nAnda harus memulai koneksi baru itu sendiri.\n");
+                pathRet = null;
             }
             else
             {
+                pathRet = path;
                hasil += (distance[FinalNode] - 1) + "th-degree connection\n";
                 ArrayList pathList = new ArrayList();
                 foreach (string node in path)
@@ -476,7 +441,7 @@ namespace bacefook
 
         }
 
-        public void visualizedGraph()
+        public void visualizedGraph(string friendA, string friendB, string algorithm)
         {
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
             //create a viewer object 
@@ -497,6 +462,38 @@ namespace bacefook
             form.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             form.Controls.Add(viewer);
+
+            if (algorithm == "BFS")
+            {
+                Dictionary<string, int> distance = new Dictionary<string, int>();
+                Dictionary<string, string> predPath = new Dictionary<string, string>();
+                this.BFS2(friendA, friendB, ref distance, ref predPath);
+                List<string> path = new List<string>();
+                string before = friendB;
+                path.Add(before);
+
+                //Me
+                while (predPath[before] != null)
+                {
+                    path.Add(predPath[before]);
+                    before = predPath[before];
+                }
+                foreach (string node in path)
+                {
+                    graph.FindNode(node).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                }
+            }
+            else if (algorithm == "DFS")
+            {
+                Stack<string> pathRet = new Stack<string>();
+                String hasil = this.DFSIterativeString(friendA, friendB, ref pathRet);
+
+                foreach(string node in pathRet)
+                {
+                    graph.FindNode(node).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                }
+
+            }
             form.ResumeLayout();
             //show the form 
             form.ShowDialog();

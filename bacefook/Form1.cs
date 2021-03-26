@@ -26,8 +26,6 @@ namespace bacefook
             InitializeComponent();
             comboBox_chooseAccount.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox_exploreFriends.DropDownStyle = ComboBoxStyle.DropDown;
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,8 +36,10 @@ namespace bacefook
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             String hasil = ExploreFriends(selectedA, selectedB, g1, algorithm);
+            hasil += "\nFriend Recommendation\n";
+            hasil += FriendRecommendation(g1, selectedA, algorithm);
             richTextBoxHasil.Text = hasil;
-            
+            g1.visualizedGraph(selectedA, selectedB, algorithm);
         }
 
         private void labelGraphInput_Click(object sender, EventArgs e)
@@ -78,8 +78,6 @@ namespace bacefook
                 string b = g1.PrintGraph();
                 b += algorithm;
                 richTxtBoxGraph.Text = b;
-
-                g1.visualizedGraph();
                 
                 foreach(string node in g1.nodes)
                 {
@@ -209,8 +207,9 @@ namespace bacefook
             }
             else if (algorithm == "DFS")
             {
+                Stack<string> pathRet = new Stack<string>();
                 hasil += ("Explore Friend with DFS\n");
-                hasil += g.DFSIterativeString(friendA, friendB);
+                hasil += g.DFSIterativeString(friendA, friendB, ref pathRet);
                 hasil += "\n";
                 return hasil;
 
