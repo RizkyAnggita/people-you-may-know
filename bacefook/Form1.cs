@@ -140,26 +140,24 @@ namespace bacefook
 
             foreach (KeyValuePair<string, ArrayList> pair in result)
             {
-
-                stringResult += (pair.Key);
-                stringResult += ("\n");
- 
-                stringResult += (pair.Value.Count);
-                stringResult += (" Mutual Friends ");
-
                 if (pair.Value.Count != 0)
                 {
-                    stringResult += (": ");
+                    stringResult += (pair.Key);
+                    stringResult += ("\n");
+
+                    stringResult += (pair.Value.Count);
+                    stringResult += (" Mutual Friends : ");
+
+
+                    foreach (string n in pair.Value)
+                    {
+                        stringResult += (n);
+                        stringResult += (" ");
+                    }
+
+                    stringResult += ("\n\n");
                 }
-
-
-                foreach (string n in pair.Value)
-                {
-                    stringResult += (n);
-                    stringResult += (" ");
-                }
-
-                stringResult += ("\n\n");
+                
             }
 
             return stringResult;
