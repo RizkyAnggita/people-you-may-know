@@ -69,7 +69,7 @@ namespace bacefook
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
-            
+            g1 = new Graph();
             openFileDialog1.Filter = "Plain text (*.txt) | *.txt";
             openFileDialog1.FilterIndex = 1;
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -83,7 +83,8 @@ namespace bacefook
                 string b = g1.PrintGraph();
                 b += algorithm;
                 richTxtBoxGraph.Text = b;
-                
+                comboBox_exploreFriends.Items.Clear();
+                comboBox_chooseAccount.Items.Clear();
                 foreach(string node in g1.nodes)
                 {
                     comboBox_exploreFriends.Items.Add(node);
