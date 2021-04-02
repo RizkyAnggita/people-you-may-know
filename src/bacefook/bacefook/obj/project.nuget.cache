@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "cIkSr8+4xv5PMhJ/k3ohedDF+4UW2VPJuNrSA8UuqWggLq49Lz6wFK6pJ5ZZksyuq+8GmOwlwg2KfJj+rO+2dQ==",
+  "success": true,
+  "projectFilePath": "D:\\cek\\Tubes2\\src\\bacefook\\bacefook\\bacefook.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SalmanPS\\.nuget\\packages\\automaticgraphlayout\\1.1.11\\automaticgraphlayout.1.1.11.nupkg.sha512",
+    "C:\\Users\\SalmanPS\\.nuget\\packages\\automaticgraphlayout.drawing\\1.1.11\\automaticgraphlayout.drawing.1.1.11.nupkg.sha512",
+    "C:\\Users\\SalmanPS\\.nuget\\packages\\automaticgraphlayout.graphviewergdi\\1.1.11\\automaticgraphlayout.graphviewergdi.1.1.11.nupkg.sha512",
+    "C:\\Users\\SalmanPS\\.nuget\\packages\\automaticgraphlayout.wpfgraphcontrol\\1.1.11\\automaticgraphlayout.wpfgraphcontrol.1.1.11.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -29,9 +29,9 @@ namespace bacefook
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(radioButton_BFS.Checked==false && radioButton_DFS.Checked==false)
+            if (radioButton_BFS.Checked == false && radioButton_DFS.Checked == false)
             {
-                MessageBox.Show("Algoritma belum dipilih!","Warning" ,MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Algoritma belum dipilih!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -49,7 +49,7 @@ namespace bacefook
                     g1.visualizedGraph(selectedA, selectedB, algorithm);
                 }
             }
-            
+
         }
 
         private void radioButton_DFS_CheckedChanged(object sender, EventArgs e)
@@ -85,14 +85,14 @@ namespace bacefook
                 richTxtBoxGraph.Text = b;
                 comboBox_exploreFriends.Items.Clear();
                 comboBox_chooseAccount.Items.Clear();
-                foreach(string node in g1.nodes)
+                foreach (string node in g1.nodes)
                 {
                     comboBox_exploreFriends.Items.Add(node);
                     comboBox_chooseAccount.Items.Add(node);
 
-                    
+
                 }
-            }    
+            }
         }
 
         private void richTxtBoxGraph_TextChanged(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace bacefook
 
                     stringResult += ("\n\n");
                 }
-                
+
             }
 
             return stringResult;
